@@ -1,6 +1,8 @@
 from django.shortcuts import render,redirect
 from django.contrib.auth.models import User
 from django.contrib import messages
+from home.EmailBackend import EmailBackend
+from django.contrib.auth import login
 
 
 def register(request):
@@ -27,3 +29,19 @@ def register(request):
       return redirect('login')
 
    return render(request,'registration/register.html')
+
+def do_login(request):
+   if request.method=='POST':
+      email=request.POST.get('email')
+      password=request.POST.get('password')
+      user=EmailBackend.authenticate(request,email,password)
+
+      if user is not None:
+         login(request,user)
+         return redirect('home:index')
+      else:
+         
+         messages.error(request,'Invalid credentials')
+         return redirect('login')
+   
+   
