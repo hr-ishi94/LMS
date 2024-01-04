@@ -778,11 +778,11 @@
 
                 <!-- Navigation -->
                 <ul class="navbar-nav ms-auto">
-                    <li class="nav-item dropdown dropdown-full-width">
-                        <a class="nav-link dropdown-toggle" id="navbarLandings" data-bs-toggle="dropdown" href="#" aria-haspopup="true" aria-expanded="false">
+                    <li class="nav-item  dropdown-full-width">
+                        <a class="nav-link " id="navbarLandings"  href="{%url 'home:index'%}" >
                             Home
                         </a>
-                        <div class="dropdown-menu border-xl shadow-none dropdown-full pt-xl-7 px-xl-8" aria-labelledby="navbarLandings">
+                        {% comment %} <div class="dropdown-menu border-xl shadow-none dropdown-full pt-xl-7 px-xl-8" aria-labelledby="navbarLandings">
                             <div class="row row-cols-2 row-cols-md-4 row-cols-lg-5 row-cols-xl-6">
                                 <div class="col mb-5 col-wd-auto">
                                     <!-- List -->
@@ -905,7 +905,7 @@
                                     </a>
                                 </div>
                             </div>
-                        </div>
+                        </div> {% endcomment %}
                     </li>
                     <li class="nav-item dropdown">
                         <a class="nav-link dropdown-toggle" id="navbarCourses" data-bs-toggle="dropdown" href="#" aria-haspopup="true" aria-expanded="false">
