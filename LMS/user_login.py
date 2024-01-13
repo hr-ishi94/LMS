@@ -2,7 +2,7 @@ from django.shortcuts import render,redirect
 from django.contrib.auth.models import User
 from django.contrib import messages
 from home.EmailBackend import EmailBackend
-from django.contrib.auth import login
+from django.contrib.auth import login,logout
 
 
 def register(request):
@@ -43,5 +43,13 @@ def do_login(request):
          
          messages.error(request,'Invalid credentials')
          return redirect('login')
+      
+def logout_user(request):
+   logout(request)
+   return redirect('home:index')
+
+def forgot_password(request):
+   return redirect("home:index")
+
    
    
