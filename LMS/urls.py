@@ -28,7 +28,8 @@ urlpatterns = [
     path('accounts/register/',user_login.register,name='register'),
     path('Do_login/',user_login.do_login,name='do_login'),
     path('logout/',user_login.logout_user,name='logout_user'),
-    path('forgot_password/',user_login.forgot_password,name='forgot_password')
+    path('accounts/profile/',user_login.profile_view,name='profile_view'),
+    path('accounts/profile/update/',user_login.profile_update,name='profile_update'),
     
 ]
 

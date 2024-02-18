@@ -1,7 +1,12 @@
 from django.shortcuts import render
+from .models import Categories
 
 def index(request):
-    return render(request,'index.html')
+    category= Categories.objects.all().order_by('id')[0:4]
+    context={
+        "category" : category
+    }
+    return render(request,'index.html',context)
 
 def single_course(request):
     return render(request,'single.html')

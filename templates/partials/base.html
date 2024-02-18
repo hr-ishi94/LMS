@@ -34,6 +34,8 @@
     <!-- Theme CSS -->
     <link rel="stylesheet" href="{% static 'assets/css/theme.min.css' %}">
 
+    <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet"/>
+
     <title>Skola</title>
 
 </head>
@@ -810,7 +812,7 @@
                         </a>
                         <div class="dropdown-menu border-xl shadow-none dropdown-menu-md" aria-labelledby="navbarDocumentation">
                             <div class="list-group list-group-flush">
-                                <a class="list-group-item" href="docs/index.html">
+                                <a class="list-group-item" href={% url 'profile_view' %}>
 
                                     <!-- Icon -->
                                     <div class="display-4 text-primary">
@@ -822,12 +824,12 @@
 
                                         <!-- Heading -->
                                         <h5 class="text-primary mb-n1">
-                                            Documentation
+                                            Account
                                         </h5>
 
                                         <!-- Text -->
                                         <p class="font-size-sm text-gray-700 mb-0">
-                                            Customizing and building
+                                            Edit your profile
                                         </p>
 
                                     </div>
