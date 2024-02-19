@@ -1,10 +1,12 @@
 from django.shortcuts import render
-from .models import Categories
+from .models import Categories,Course
 
 def index(request):
     category= Categories.objects.all().order_by('id')[0:4]
+    course=Course.objects.filter(status = 'PUBLISH').order_by('-id')
     context={
-        "category" : category
+        "category" : category,
+        'course':course
     }
     return render(request,'index.html',context)
 
