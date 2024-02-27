@@ -13,11 +13,13 @@ def index(request):
 def single_course(request):
     category =Categories.get_all_categories(Categories)
     course_count= Course.objects.all().count()
+    course= Course.objects.all().order_by("id")
     level= Level.objects.all()
     context = {
         "category" : category,
         'course_count':course_count,
-        'level': level
+        'level': level,
+        'course':course
     }
     return render(request,'single.html', context)
 
